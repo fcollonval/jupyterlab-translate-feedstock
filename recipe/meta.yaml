@@ -21,14 +21,14 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python >=3.6
   run:
     - babel
     - click
     - cookiecutter
     - nodejs
     - polib
-    - python
+    - python >=3.6
 
 test:
   commands:
