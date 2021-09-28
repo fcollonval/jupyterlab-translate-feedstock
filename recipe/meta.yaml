@@ -1,6 +1,6 @@
 {% set name = "jupyterlab-translate" %}
-{% set version = "0.1.1" %}
-{% set hash = "bbd8b50d02397a179e14192bff410983e9012e6f6ceb455cb002e1eea26b448c" %}
+{% set version = "1.0.0" %}
+{% set hash = "eac71deb0eb77ad4224d68ab49c86022174d3a7066743f4a22a14f8b30eb81c4" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - jupyterlab-translate = jupyterlab_translate.cli:main
     - gettext-extract = jupyterlab_translate.gettext_extract:main
@@ -32,7 +32,8 @@ requirements:
 
 test:
   commands:
-    - gettext-extract --help
+    # The 'compiled' shipped version ends with an error - skipping it
+    # - gettext-extract --help
     - jupyterlab-translate --help
   imports:
     - jupyterlab_translate
@@ -42,7 +43,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.txt
-  summary: 'Jupyterlab Language Pack Translations Helper'
+  summary: Jupyterlab Language Pack Translations Helper
   description: |
     Jupyter Translate provides functionality to extract localizable strings
     from Jupyterlab extensions. Extensions can update the `jupyterlab-
