@@ -1,6 +1,6 @@
 {% set name = "jupyterlab-translate" %}
-{% set version = "1.0.3" %}
-{% set hash = "da7722c825dca8a7597dd54621f7f79f338872506f7b9a36809dc0754bfd7141" %}
+{% set version = "1.1.0" %}
+{% set hash = "015395b3af23921f1a3e7972e7cf8750c1078f3d77af5022e5daf58638622d95" %}
 
 package:
   name: {{ name|lower }}
@@ -29,6 +29,7 @@ requirements:
     - nodejs
     - polib
     - python >=3.6
+    - setuptools
 
 test:
   commands:
